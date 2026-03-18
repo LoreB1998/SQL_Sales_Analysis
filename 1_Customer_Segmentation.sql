@@ -1,4 +1,9 @@
 /*
+ Q1: Customer Segmentation
+Who are our most valuable customers?
+ */
+
+/*
 Customer Segmentation
 */
 WITH customer_ltv AS (SELECT customerkey,
