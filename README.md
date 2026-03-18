@@ -117,7 +117,7 @@ I clienti sono stati raggruppati in base al **loro anno di primo acquisto**. Per
 
 ```sql
 SELECT cohort_year,
-       COUNT(DISTINCT customerkey)                                             AS total_customers,
+       COUNT(DISTINCT customerkey)                                            AS total_customers,
        SUM(total_net_revenue)::numeric(10, 2)                                 AS total_revenue,
        (SUM(total_net_revenue) / COUNT(DISTINCT customerkey))::numeric(10, 2) AS customer_revenue
 FROM cohort_analysis
@@ -146,7 +146,7 @@ GROUP BY cohort_year;
 
 ```sql
 SELECT DATE_TRUNC('month', orderdate)::date                                   AS year_month,
-       COUNT(DISTINCT customerkey)                                             AS total_customers,
+       COUNT(DISTINCT customerkey)                                            AS total_customers,
        SUM(total_net_revenue)::numeric(10, 2)                                 AS total_revenue,
        (SUM(total_net_revenue) / COUNT(DISTINCT customerkey))::numeric(10, 2) AS customer_revenue
 FROM cohort_analysis
@@ -174,7 +174,7 @@ Per ogni coorte i clienti sono stati classificati come **Attivi** (acquisto negl
 ```sql
 SELECT cohort_year,
        customer_status,
-       COUNT(customerkey)                                                        AS num_customers,
+       COUNT(customerkey)                                                       AS num_customers,
        SUM(COUNT(customerkey)) OVER (PARTITION BY cohort_year)                  AS total_customers,
        (COUNT(customerkey) /
         SUM(COUNT(customerkey)) OVER (PARTITION BY cohort_year))::numeric(5, 2) AS status_pct
