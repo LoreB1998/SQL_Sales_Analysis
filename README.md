@@ -100,7 +100,7 @@ ORDER BY customer_segment DESC;
 
 ![Segmentazione Clienti](asset/chart_1_segmentation.png)
 
-**Osservazioni:**
+**Osservazioni:** 
 
 - Il segmento **High-Value** (solo il 25% dei clienti) genera il **66% dei ricavi totali** — un classico effetto Pareto amplificato
 - Il gap tra avg LTV High e Low è di **31,5×**: un cliente High-Value vale quanto 31 clienti Low-Value
